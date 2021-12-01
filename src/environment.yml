@@ -1,0 +1,33 @@
+# 28.11.21 - # yaml file to create a conda environment, 
+# Navigate the the foloder and using a conda prompt, run the following commmand
+# conda env create -f environment.yml
+
+
+name: arup_nlp_prog
+channels:
+  - anaconda
+  - conda-forge
+dependencies:
+  - python=3.9
+  - ipykernel
+  - jupyter
+  - ipywidgets
+  - ipython_genutils
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - plotly
+  - dash
+  - nltk
+  - vadersentiment
+  - spacy
+  - spacy-model-en_core_web_sm
+  - spacy-model-en_core_web_md
+  - spacy-model-en_core_web_lg
+  - sentence-transformers
+  - umap-learn
+  - hdbscan
+  - tika
+  - elasticsearch
+  - elastic-enterprise-search
