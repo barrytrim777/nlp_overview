@@ -1,33 +1,48 @@
-# 28.11.21 - # yaml file to create a conda environment, 
-# Navigate the the foloder and using a conda prompt, run the following commmand
-# conda env create -f environment.yml
+# 28.11.21 - yaml file to create a conda environment for NLP (arup_nlp_prog)
+# 03.12.21 - updated for windows environments
+# 06.12.21 - added vadersentiment and some additional comments
+
+# To run
+# Navigate the folder which this file is installed and using a conda prompt, run the following commmand
+# conda env create -f environment_win.yml
+
+# Notes
+# https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file
+# https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually
+# https://stackoverflow.com/questions/64685062/specifying-cpu-only-for-pytorch-in-conda-yaml-file
+# https://github.com/UKPLab/sentence-transformers/issues/94
 
 
 name: arup_nlp_prog
 channels:
-  - anaconda
+  - defaults
   - conda-forge
+  - pytorch
 dependencies:
+  # general
   - python=3.9
   - ipykernel
-  - jupyter
-  - ipywidgets
   - ipython_genutils
+  - jupyter
+  - pip
   - pandas
   - scikit-learn
+  # plotting
   - matplotlib
   - seaborn
   - plotly
   - dash
+  # ml
+  - umap-learn
+  - hdbscan 
+  # nlp
+  - tika
+  - elasticsearch
   - nltk
   - vadersentiment
   - spacy
   - spacy-model-en_core_web_sm
   - spacy-model-en_core_web_md
   - spacy-model-en_core_web_lg
-  - sentence-transformers
-  - umap-learn
-  - hdbscan
-  - tika
-  - elasticsearch
-  - elastic-enterprise-search
+  - pip:
+    - sentence-transformers
